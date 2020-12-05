@@ -13,17 +13,23 @@ struct ChatView: View {
 
     init() {
         client = WebSocketClient()
-        client.setup()
+        client.setup(url: "ws://localhost:5001")
     }
 
     var body: some View {
         VStack {
-            List {
-                ForEach(client.messages, id: \.self) { message in
-                    Text(message)
+            if client.isConnected {
+                List {
+                    ForEach(client.messages, id: \.self) { message in
+                        Text(message)
+                    }
                 }
+            } else {
+                Spacer()
+                ProgressView()
+                Spacer()
             }
-            HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 16, content: {
+            HStack(alignment: .center, spacing: 16, content: {
                 TextField("コメント", text: $message)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 Button("send") {
@@ -32,6 +38,7 @@ struct ChatView: View {
                         message = ""
                     }
                 }
+                .disabled(!client.isConnected)
             })
             .padding(.horizontal, 16)
             .padding(.vertical, 8)

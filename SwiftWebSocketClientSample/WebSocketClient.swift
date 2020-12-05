@@ -12,10 +12,11 @@ class WebSocketClient: NSObject, ObservableObject {
     private var webSocketTask: URLSessionWebSocketTask?
 
     @Published var messages: [String] = []
+    @Published var isConnected: Bool = false
 
-    func setup() {
+    func setup(url: String) {
         let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
-        webSocketTask = urlSession.webSocketTask(with: URL(string: "ws://localhost:5001")!)
+        webSocketTask = urlSession.webSocketTask(with: URL(string: url)!)
     }
 
     func connect() {
@@ -63,9 +64,22 @@ extension WebSocketClient: URLSessionWebSocketDelegate {
 
     func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didOpenWithProtocol protocol: String?) {
         print("didOpenWithProtocol")
+        DispatchQueue.main.async {
+            self.isConnected = true
+        }
     }
 
     func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didCloseWith closeCode: URLSessionWebSocketTask.CloseCode, reason: Data?) {
         print("didCloseWith: closeCode: \(closeCode) reason: \(String(describing: reason))")
+        DispatchQueue.main.async {
+            self.isConnected = false
+        }
+    }
+
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        print("didCompleteWithError error: \(String(describing: error))")
+        DispatchQueue.main.async {
+            self.isConnected = false
+        }
     }
 }
