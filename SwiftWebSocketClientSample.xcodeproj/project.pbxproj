@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		FEBF14D8257BC549003F8B13 /* SwiftWebSocketClientSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF14D7257BC549003F8B13 /* SwiftWebSocketClientSampleApp.swift */; };
-		FEBF14DA257BC549003F8B13 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF14D9257BC549003F8B13 /* ContentView.swift */; };
+		FEBF14DA257BC549003F8B13 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF14D9257BC549003F8B13 /* ChatView.swift */; };
 		FEBF14DC257BC54B003F8B13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEBF14DB257BC54B003F8B13 /* Assets.xcassets */; };
 		FEBF14DF257BC54B003F8B13 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEBF14DE257BC54B003F8B13 /* Preview Assets.xcassets */; };
+		FEBF14E9257BC5CD003F8B13 /* WebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF14E8257BC5CD003F8B13 /* WebSocketClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FEBF14D4257BC549003F8B13 /* SwiftWebSocketClientSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftWebSocketClientSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBF14D7257BC549003F8B13 /* SwiftWebSocketClientSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftWebSocketClientSampleApp.swift; sourceTree = "<group>"; };
-		FEBF14D9257BC549003F8B13 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FEBF14D9257BC549003F8B13 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		FEBF14DB257BC54B003F8B13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEBF14DE257BC54B003F8B13 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FEBF14E0257BC54B003F8B13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEBF14E8257BC5CD003F8B13 /* WebSocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				FEBF14D7257BC549003F8B13 /* SwiftWebSocketClientSampleApp.swift */,
-				FEBF14D9257BC549003F8B13 /* ContentView.swift */,
+				FEBF14D9257BC549003F8B13 /* ChatView.swift */,
+				FEBF14E8257BC5CD003F8B13 /* WebSocketClient.swift */,
 				FEBF14DB257BC54B003F8B13 /* Assets.xcassets */,
 				FEBF14E0257BC54B003F8B13 /* Info.plist */,
 				FEBF14DD257BC54B003F8B13 /* Preview Content */,
@@ -138,7 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEBF14DA257BC549003F8B13 /* ContentView.swift in Sources */,
+				FEBF14E9257BC5CD003F8B13 /* WebSocketClient.swift in Sources */,
+				FEBF14DA257BC549003F8B13 /* ChatView.swift in Sources */,
 				FEBF14D8257BC549003F8B13 /* SwiftWebSocketClientSampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
